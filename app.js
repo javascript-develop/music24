@@ -146,7 +146,7 @@ app.post("/create-subscription", async (req, res) => {
         break;
       default:
         // Handle invalid planId
-        return res.status(400).json({ error: "Invalid planId" });
+        return res.status(400).json({ error: "Invalid planI" });
     }
 
     // const customer = await stripe.customers.create({
