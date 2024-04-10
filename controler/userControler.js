@@ -70,3 +70,13 @@ exports.registerUser = async (req, res, next) => {
       res.status(500).json({ error: "Internal Server Error" });
     }
   };
+  exports.allUser = async (req, res, next) => {
+    try {
+      const user = await User.find({});
+  
+      res.json(user);
+    } catch (error) {
+      console.error("Error fetching addresses:", error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  };
