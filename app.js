@@ -14,7 +14,7 @@ const upload = multer();
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://mornakaraoke.online",
   })
 );
 app.set("port", 5004);
