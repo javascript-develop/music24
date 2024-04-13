@@ -30,7 +30,7 @@ app.use("/api/v1/order", orderRouter);
 app.use(express.urlencoded({ extended: true }));
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const s3 = new AWS.S3({
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  accessKeyId: "AKIA47CRXO4GIXVWAKRI",
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
   region: process.env.AWS_REGION,
 });
