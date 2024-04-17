@@ -4,6 +4,7 @@ const {
   getSingleUser,
   getUserByEmail,
   allUser,
+  handleDeleteUser,
 } = require("../controler/userControler");
 
 
@@ -12,5 +13,6 @@ router.post("/register", registerUser);
 router.get("/singleByEmail/:email", getSingleUser);
 router.get("/peruser", getUserByEmail);
 router.get("/all", allUser);
+router.delete("delete/:id/",handleDeleteUser);
 
 module.exports = router;

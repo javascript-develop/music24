@@ -97,3 +97,20 @@ exports.getAudio = async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
+
+exports.deleteVideo = async (req, res) => {
+  const { id } = req.params; 
+  try {
+    const deletedVideo = await VideoDB.findByIdAndDelete(id);
+    console.log('Deleted video:', deletedVideo);
+    if (!deletedVideo) {
+      return res.status(404).json({ success: false, error: 'Video not found' });
+    }
+    res.status(200).json({ success: true, id: id });
+  } catch (error) {
+    console.error('Error deleting video:', error);
+    res.status(500).json({ success: false, error: 'Internal server error' });
+  }
+};
+
+

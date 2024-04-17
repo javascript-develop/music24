@@ -5,6 +5,7 @@ const {
   getAllAudio,
   getSingleAudio,
   getAudio,
+  deleteVideo
 } = require("../controler/orderControler");
 
 const router = express.Router();
@@ -13,5 +14,6 @@ router.get("/getallvideo", getAllVideo);
 router.get("/getallaudio", getAllAudio);
 router.get("/music/:id", getSingleAudio);
 router.get("/music/", getAudio);
+router.delete("/deletevideo/:id", deleteVideo);
 
 module.exports = router;

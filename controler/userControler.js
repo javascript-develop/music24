@@ -80,3 +80,21 @@ exports.registerUser = async (req, res, next) => {
       res.status(500).json({ error: "Internal Server Error" });
     }
   };
+
+  exports.handleDeleteUser = async (req, res) => {
+    try {
+      const { id } = req.params; 
+      console.log(id)
+      const deletedUser = await User.findByIdAndDelete(id);
+      console.log('Deleted user:', deletedVideo);
+      if (deletedUser) {
+        res.json({ success: true, message: 'User deleted successfully' });
+      } else {
+        res.status(404).json({ success: false, message: 'User not found' });
+      }
+    } catch (error) {
+      // If an error occurs during deletion, send error response
+      console.error('Error deleting user:', error);
+      res.status(500).json({ success: false, message: 'Internal server error' });
+    }
+  };
